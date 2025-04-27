@@ -15,18 +15,16 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
+  xdg.enable = true;
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
 #    pkgs.awscli2
 #    #    pkgs.carapace  # todo: see if valuable and configure
     pkgs.erdtree
-    pkgs.zoxide
-    pkgs.eza
     pkgs.fzf
     pkgs.manix
-    pkgs.nushell
-    pkgs.bash
 #    pkgs.nerdfonts
     pkgs.nixfmt-rfc-style
 #    # Language servers for helix
@@ -93,9 +91,14 @@
   };
 
   home.shellAliases = {
-    hs = "home-manager switch";
-    hb = "home-manager build";
+    hs = "home-manager switch --flake ~/.config/home-manager/#pvautour";
+    hb = "home-manager build --flake ~/.config/home-manager/#pvautour";
     f = "fastfetch";
+  };
+
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
   };
 
   programs.git = {
@@ -103,6 +106,27 @@
     userName = "Pascal Vautour";
     userEmail = "vautour.pascal@gmail.com";
     difftastic.enable = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+    enableNushellIntegration = true;
+  };
+
+  programs.eza = {
+    enable = true;
+    enableBashIntegration = true;
+    enableNushellIntegration = true;
+    git = true;
+  };
+
+  programs.nushell = {
+    enable = true;
+  };
+
+  programs.bash = {
+    enable = true;
   };
 
   wayland.windowManager.hyprland = {
