@@ -14,6 +14,24 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
   # boot.loader.systemd-boot.graceful = true;
+  # nvidia configuration
+  nixpkgs.config.allowUnfree = true;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [nvidia-vaapi-driver];
+  };
+
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia.open = false;
+  # asus ctl configuration
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  services.supergfxd.enable = true;
+  services = {
+    asusd = {
+      enable = true;
+      enableUserService = true;
+    };
+  };
 
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
