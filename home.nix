@@ -86,14 +86,18 @@
   #  /etc/profiles/per-user/pvautour/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    # EDITOR = "hx";
     TERMINAL = "nu";
   };
 
   home.shellAliases = {
     hs = "home-manager switch --flake ~/.config/home-manager/#pvautour";
     hb = "home-manager build --flake ~/.config/home-manager/#pvautour";
+    ns = "sudo nixos-rebuild switch";
+    nb = "sudo nixos-rebuild build";
     f = "fastfetch";
+    cd = "z";
+    cdi = "zi";
   };
 
   programs.helix = {
