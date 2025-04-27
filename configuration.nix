@@ -89,7 +89,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
-      helix
       kitty
       firefox
       wofi
