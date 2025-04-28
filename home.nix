@@ -22,6 +22,8 @@
   home.packages = [
 #    pkgs.awscli2
 #    #    pkgs.carapace  # todo: see if valuable and configure
+    pkgs.firefox
+    pkgs.wofi
     pkgs.erdtree
     pkgs.fzf
     pkgs.manix
@@ -93,11 +95,19 @@
   home.shellAliases = {
     hs = "home-manager switch --flake ~/.config/home-manager/#pvautour";
     hb = "home-manager build --flake ~/.config/home-manager/#pvautour";
+    hu = "nix flake update --flake ~/.config/home-manager/";
     ns = "sudo nixos-rebuild switch";
     nb = "sudo nixos-rebuild build";
     f = "fastfetch";
     cd = "z";
     cdi = "zi";
+  };
+
+  programs.kitty = {
+    enable = true;
+    settings = {
+      shell = "${pkgs.nushell}/bin/nu"; # Set Nushell as the default shell in Kitty
+    };
   };
 
   programs.helix = {
