@@ -20,6 +20,7 @@
     enable = true;
     extraPackages = with pkgs; [nvidia-vaapi-driver];
   };
+  hardware.nvidia.powerManagement.enable = true;
 
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.open = false;
@@ -36,7 +37,7 @@
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   # time.timeZone = "Europe/Amsterdam";
@@ -87,7 +88,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.pvautour = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
     ];
   };
@@ -98,8 +99,11 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    helix
     home-manager
+  ];
+
+  environment.variables = [
+    NIXOS_OZONE_WL=1
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

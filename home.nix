@@ -88,14 +88,15 @@
   #  /etc/profiles/per-user/pvautour/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "hx";
-    TERMINAL = "nu";
   };
 
   home.shellAliases = {
     hs = "home-manager switch --flake ~/.config/home-manager/#pvautour";
     hb = "home-manager build --flake ~/.config/home-manager/#pvautour";
     hu = "nix flake update --flake ~/.config/home-manager/";
+    hc = "hx ~/.config/home-manager/home.nix";
+    nc = "hx ~/.config/home-manager/configuration.nix";
+    hyc = "hx ~/.config/home-manager/config/hyprland/hyprland.conf";
     ns = "sudo nixos-rebuild switch";
     nb = "sudo nixos-rebuild build";
     f = "fastfetch";
@@ -113,6 +114,17 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
+    settings = {
+    };
+      languages.language = [{
+          name = "config";
+          grammar = "bash";
+          scope = "source.bash";
+          file-types = [
+          "config"
+          "conf"
+          ];
+  }];
   };
 
   programs.git = {
