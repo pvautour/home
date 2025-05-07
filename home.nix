@@ -20,21 +20,21 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
-#    pkgs.awscli2
-#    #    pkgs.carapace  # todo: see if valuable and configure
+    #    pkgs.awscli2
+    #    #    pkgs.carapace  # todo: see if valuable and configure
     pkgs.firefox
     pkgs.wofi
     pkgs.erdtree
     pkgs.fzf
     pkgs.manix
-#    pkgs.nerdfonts
+    #    pkgs.nerdfonts
     pkgs.nixfmt-rfc-style
-#    # Language servers for helix
+    #    # Language servers for helix
     pkgs.nodePackages.typescript-language-server
     pkgs.nodePackages.vscode-langservers-extracted
     pkgs.nodePackages.serve
-#    pkgs.openssh
-#    pkgs.pywal
+    #    pkgs.openssh
+    #    pkgs.pywal
     pkgs.ripgrep
     pkgs.zip
     pkgs.fastfetch
@@ -102,6 +102,7 @@
     f = "fastfetch";
     cd = "z";
     cdi = "zi";
+    cat = "bat";
   };
 
   programs.kitty = {
@@ -115,14 +116,53 @@
     enable = true;
     defaultEditor = true;
     settings = {
+      theme = "base16_transparent";
+      editor.cursor-shape = {
+        normal = "block";
+        insert = "bar";
+      };
+      editor.soft-wrap.enable = true;
+      editor.bufferline = "multiple";
+      keys.normal = {
+        space.c = ":buffer-close";
+        space.C = ":buffer-close!";
+        space.l = ":toggle soft-wrap.enable";
+        space.f = "file_picker_in_current_directory";
+        space.F = "file_picker";
+      };
     };
-      languages.language = [{
-          name = "bash";
-          file-types = [
+    languages.language = [
+      {
+        name = "bash";
+        file-types = [
           "config"
           "conf"
-          ];
-  }];
+        ];
+
+      }
+      {
+        name = "nix";
+        auto-format = true;
+        formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
+      }
+      {
+        name = "html";
+        auto-format = true;
+      }
+      {
+        name = "json";
+        auto-format = true;
+      }
+      {
+        name = "typescript";
+        auto-format = true;
+      }
+      {
+        name = "javascript";
+        auto-format = true;
+      }
+
+    ];
   };
 
   programs.git = {
@@ -130,6 +170,9 @@
     userName = "Pascal Vautour";
     userEmail = "vautour.pascal@gmail.com";
     difftastic.enable = true;
+    extraConfig = {
+      push.autoSetupRemote = "true";
+    };
   };
 
   programs.zoxide = {
@@ -153,10 +196,21 @@
     enable = true;
   };
 
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true; # see note on other shells below
+    nix-direnv.enable = true;
+  };
+
+  programs.bat = {
+    enable = true;
+    config.theme = "base16";
+  };
+
   wayland.windowManager.hyprland = {
-   enable = true;
-   extraConfig = builtins.readFile ./config/hyprland/hyprland.conf;
- };
- # Let Home Manager install and manage itself.
+    enable = true;
+    extraConfig = builtins.readFile ./config/hyprland/hyprland.conf;
+  };
+  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
