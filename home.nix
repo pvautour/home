@@ -117,9 +117,7 @@
     settings = {
     };
       languages.language = [{
-          name = "config";
-          grammar = "bash";
-          scope = "source.bash";
+          name = "bash";
           file-types = [
           "config"
           "conf"
