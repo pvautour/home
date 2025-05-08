@@ -1,4 +1,9 @@
-{ config, pkgs, userSettings, ... }:
+{
+  config,
+  pkgs,
+  userSettings,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -38,22 +43,6 @@
     pkgs.ripgrep
     pkgs.zip
     pkgs.fastfetch
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -91,8 +80,6 @@
   };
 
   home.shellAliases = {
-    hs = "home-manager switch --flake ~/.config/home-manager/#pvautour";
-    hb = "home-manager build --flake ~/.config/home-manager/#pvautour";
     hu = "nix flake update --flake ~/.config/home-manager/";
     hc = "hx ~/.config/home-manager/home.nix";
     nc = "hx ~/.config/home-manager/configuration.nix";
@@ -192,9 +179,9 @@
     enable = true;
   };
 
-  programs.bash = {
-    enable = true;
-  };
+  # programs.bash = {
+  #  enable = true;
+  # };
 
   programs.direnv = {
     enable = true;
@@ -207,10 +194,10 @@
     config.theme = "base16";
   };
 
-  wayland.windowManager.hyprland = {
-    enable = true;
-    extraConfig = builtins.readFile ./config/hyprland/hyprland.conf;
-  };
+  # wayland.windowManager.hyprland = {
+  #  enable = true;
+  #  extraConfig = builtins.readFile ./config/hyprland/hyprland.conf;
+  # };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
