@@ -1,15 +1,9 @@
 {
-  config,
   pkgs,
-  userSettings,
   ...
 }:
 
 {
-  home.username = userSettings.username;
-  home.homeDirectory = userSettings.homeDirectory;
-  home.stateVersion = "24.05"; # Please read the comment before changing.
-  xdg.enable = true;
   home.packages = [
     pkgs.pywal
   ];
@@ -20,5 +14,4 @@
     sc = "hx /mnt/c/Users/pvautour/Documents/Work/todo/scratchpad.md";
     mn = "hx /mnt/c/Users/pvautour/Documents/Work/todo/meeting-notes.md";
   };
-  programs.home-manager.enable = true;
 }
