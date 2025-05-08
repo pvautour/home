@@ -2,13 +2,18 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    /etc/nixos/hardware-configuration.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -18,11 +23,11 @@
   nixpkgs.config.allowUnfree = true;
   hardware.graphics = {
     enable = true;
-    extraPackages = with pkgs; [nvidia-vaapi-driver];
+    extraPackages = with pkgs; [ nvidia-vaapi-driver ];
   };
   hardware.nvidia.powerManagement.enable = true;
 
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = false;
   # asus ctl configuration
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -34,13 +39,15 @@
     };
   };
 
+  # services.automatic-timezoned.enable = true; # did not work
+
   # networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Canada/Eastern";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -54,7 +61,10 @@
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   programs.hyprland = {
     enable = true;
@@ -63,9 +73,6 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-
-
-  
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -88,7 +95,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.pvautour = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
     ];
   };
@@ -102,9 +112,9 @@
     home-manager
   ];
 
-  environment.variables = [
-    NIXOS_OZONE_WL=1
-  ];
+  environment.variables = {
+    NIXOS_OZONE_WL = 1;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -150,4 +160,3 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
 }
-
