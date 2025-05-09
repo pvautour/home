@@ -23,8 +23,8 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./home.nix
-          ./home
+          ./home-manager/configurations
+          ./home-manager/configurations/home.nix
         ];
 
         # Optionally use extraSpecialArgs
@@ -42,8 +42,8 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./home.nix
-          ./work
+          ./home-manager/configurations
+          ./home-manager/configurations/work.nix
         ];
 
         # Optionally use extraSpecialArgs
