@@ -1,4 +1,7 @@
 { pkgs, lib, ... }:
 {
-  imports = [ ./hello/hello.nix ];
+  imports = [
+    ./gui-programs
+    ./hello/hello.nix
+  ];
 }

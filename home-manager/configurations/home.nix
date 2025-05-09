@@ -6,6 +6,7 @@
 {
   imports = [ ../modules ];
   hello.enable = true;
+  gui-programs.enable = true;
   home.packages = [
   ];
   home.shellAliases = {

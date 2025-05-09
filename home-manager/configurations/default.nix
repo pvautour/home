@@ -27,8 +27,6 @@
   home.packages = [
     #    pkgs.awscli2
     #    #    pkgs.carapace  # todo: see if valuable and configure
-    pkgs.firefox
-    pkgs.wofi
     pkgs.erdtree
     pkgs.fzf
     pkgs.manix
