@@ -4,6 +4,8 @@
 }:
 
 {
+  imports = [ ../modules ];
+  hello.enable = true;
   home.packages = [
   ];
   home.shellAliases = {
