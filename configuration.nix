@@ -28,7 +28,7 @@
   hardware.nvidia.powerManagement.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = false;
+  hardware.nvidia.open = true;
   # asus ctl configuration
   boot.kernelPackages = pkgs.linuxPackages_latest;
   services.supergfxd.enable = true;
