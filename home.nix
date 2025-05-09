@@ -179,10 +179,6 @@
     enable = true;
   };
 
-  # programs.bash = {
-  #  enable = true;
-  # };
-
   programs.direnv = {
     enable = true;
     enableBashIntegration = true; # see note on other shells below
@@ -194,10 +190,5 @@
     config.theme = "base16";
   };
 
-  # wayland.windowManager.hyprland = {
-  #  enable = true;
-  #  extraConfig = builtins.readFile ./config/hyprland/hyprland.conf;
-  # };
-  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
