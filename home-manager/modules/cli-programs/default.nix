@@ -26,6 +26,7 @@ with lib;
       #    pkgs.awscli2
       #    #    pkgs.carapace  # todo: see if valuable and configure
       pkgs.erdtree
+      pkgs.wev
       pkgs.fzf
       pkgs.manix
       #    pkgs.nerdfonts
