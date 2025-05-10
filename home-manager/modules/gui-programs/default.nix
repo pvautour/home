@@ -17,5 +17,10 @@ with lib;
       pkgs.firefox
       pkgs.wofi
     ];
+
+    wayland.windowManager.hyprland = {
+      enable = true;
+      extraConfig = builtins.readFile ../../config/hyprland/hyprland.conf;
+    };
   };
 }

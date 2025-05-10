@@ -5,11 +5,11 @@
 
 {
   imports = [ ../modules ];
-  hello.enable = true;
   gui-programs.enable = true;
   home.packages = [
   ];
   home.shellAliases = {
+    nc = "hx ~/.config/home-manager/configuration.nix";
     hs = "home-manager switch --flake ~/.config/home-manager/#home";
     hb = "home-manager build --flake ~/.config/home-manager/#home";
     td = "hx ~/Sync/todo/todo.md";
@@ -19,10 +19,5 @@
 
   programs.bash = {
     enable = true;
-  };
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-    extraConfig = builtins.readFile ../config/hyprland/hyprland.conf;
   };
 }
