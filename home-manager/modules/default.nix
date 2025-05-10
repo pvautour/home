@@ -3,7 +3,7 @@
   imports = [
     ./cli-programs
     ./gui-programs
-    ./hello/hello.nix
+    ./gaming
   ];
 
   cli-programs.enable = lib.mkDefault true;
