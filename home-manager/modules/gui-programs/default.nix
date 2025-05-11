@@ -17,6 +17,19 @@ with lib;
       pkgs.wofi
     ];
 
+    services.hyprpaper = {
+      enable = true;
+      settings = {
+        preload = [
+          "/home/pvautour/.config/home-manager/home-manager/modules/gui-programs/config/hypr/misty-forest.jpg"
+        ];
+
+        wallpaper = [
+          ",/home/pvautour/.config/home-manager/home-manager/modules/gui-programs/config/hypr/misty-forest.jpg"
+        ];
+      };
+    };
+
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = builtins.readFile ./config/hypr/hyprland.conf;
