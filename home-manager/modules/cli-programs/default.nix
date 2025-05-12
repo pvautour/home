@@ -14,6 +14,7 @@ with lib;
     home.shellAliases = {
       hu = "nix flake update --flake ~/.config/home-manager/";
       hc = "hx ~/.config/home-manager/";
+      hm = "man home-configuration.nix";
       ns = "sudo nixos-rebuild switch";
       nb = "sudo nixos-rebuild build";
       f = "fastfetch";
