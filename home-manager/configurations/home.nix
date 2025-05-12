@@ -16,8 +16,4 @@
     sc = "hx ~/Sync/todo/scratchpad.md";
     mn = "hx ~/Sync/todo/meeting-notes.md";
   };
-
-  programs.bash = {
-    enable = true;
-  };
 }

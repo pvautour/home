@@ -4,6 +4,7 @@
 }:
 
 {
+  imports = [ ../modules ];
   home.packages = [
     pkgs.pywal
   ];
@@ -13,5 +14,7 @@
     td = "hx /mnt/c/Users/pvautour/Documents/Work/todo/todo.md";
     sc = "hx /mnt/c/Users/pvautour/Documents/Work/todo/scratchpad.md";
     mn = "hx /mnt/c/Users/pvautour/Documents/Work/todo/meeting-notes.md";
+    w = "wal --theme base16-greenscreen";
   };
+  wsl-bash.enable = true;
 }

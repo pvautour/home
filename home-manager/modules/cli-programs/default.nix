@@ -26,7 +26,6 @@ with lib;
       #    pkgs.awscli2
       #    #    pkgs.carapace  # todo: see if valuable and configure
       pkgs.erdtree
-      pkgs.wev
       pkgs.fzf
       pkgs.manix
       #    pkgs.nerdfonts
@@ -41,12 +40,8 @@ with lib;
       pkgs.zip
       pkgs.fastfetch
     ];
-    programs.kitty = {
-      enable = true;
-      settings = {
-        shell = "${pkgs.nushell}/bin/nu"; # Set Nushell as the default shell in Kitty
-      };
-    };
+
+    programs.bash.enable = true;
 
     programs.helix = {
       enable = true;

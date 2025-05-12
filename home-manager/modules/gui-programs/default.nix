@@ -15,6 +15,7 @@ with lib;
     home.packages = [
       pkgs.firefox
       pkgs.wofi
+      pkgs.wev
     ];
 
     services.hyprpaper = {
@@ -27,6 +28,13 @@ with lib;
         wallpaper = [
           ",/home/pvautour/.config/home-manager/home-manager/modules/gui-programs/config/hypr/misty-forest.jpg"
         ];
+      };
+    };
+
+    programs.kitty = {
+      enable = true;
+      settings = {
+        shell = "${pkgs.nushell}/bin/nu"; # Set Nushell as the default shell in Kitty
       };
     };
 
