@@ -41,6 +41,13 @@ with lib;
       pkgs.fastfetch
     ];
 
+    programs.gh = {
+      enable = true;
+      settings = {
+        protocol = "ssh";
+      };
+    };
+
     programs.bash.enable = true;
 
     programs.helix = {
@@ -117,6 +124,10 @@ with lib;
       enableBashIntegration = true;
       enableNushellIntegration = true;
       git = true;
+      extraOptions = [
+        "-s"
+        "type"
+      ];
     };
 
     programs.nushell = {
