@@ -22,11 +22,11 @@ with lib;
       enable = true;
       settings = {
         preload = [
-          "/home/pvautour/.config/home-manager/home-manager/modules/gui-programs/config/hypr/misty-forest.jpg"
+          "/home/pvautour/.config/home-manager/modules/home-manager/gui-programs/config/hypr/misty-forest.jpg"
         ];
 
         wallpaper = [
-          ",/home/pvautour/.config/home-manager/home-manager/modules/gui-programs/config/hypr/misty-forest.jpg"
+          ",/home/pvautour/.config/home-manager/modules/home-manager/gui-programs/config/hypr/misty-forest.jpg"
         ];
       };
     };

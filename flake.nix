@@ -11,20 +11,31 @@
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
+    {
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      nixosConfigurations."zephyrus-g15" = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/zephyrus-g15/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
       homeConfigurations."home" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./home-manager/configurations
-          ./home-manager/configurations/home.nix
+          ./modules/configurations/default.nix
+          ./hosts/zephyrus-g15/home.nix
         ];
 
         # Optionally use extraSpecialArgs
@@ -43,7 +54,7 @@
         # the path to your home.nix.
         modules = [
           ./home-manager/configurations
-          ./home-manager/configurations/work.nix
+          ./hosts/work/work.nix
         ];
 
         # Optionally use extraSpecialArgs
@@ -55,6 +66,5 @@
           };
         };
       };
-
     };
 }
