@@ -138,7 +138,8 @@ with lib;
 
     programs.direnv = {
       enable = true;
-      enableBashIntegration = true; # see note on other shells below
+      enableBashIntegration = true;
+      enableNushellIntegration = true;
       nix-direnv.enable = true;
     };
 
