@@ -53,7 +53,7 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./home-manager/configurations
+          ./modules/configurations/default.nix
           ./hosts/work/work.nix
         ];
 

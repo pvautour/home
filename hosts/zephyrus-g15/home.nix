@@ -12,7 +12,7 @@
     td = "hx ~/Sync/todo/todo.md";
     sc = "hx ~/Sync/todo/scratchpad.md";
     mn = "hx ~/Sync/todo/meeting-notes.md";
-    hs = "home-manager switch --flake /home/pvautour/.config/home-manager/#home";
-    ns = "sudo nixos-rebuild switch --flake /home/pvautour/.config/home-manager/#zephyrus-g15";
+    hs = "home-manager switch --flake ~/.config/home-manager/#home";
+    ns = "sudo nixos-rebuild switch --flake ~/.config/home-manager/#zephyrus-g15";
   };
 }
