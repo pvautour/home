@@ -7,4 +7,5 @@
   ];
 
   cli-programs.enable = lib.mkDefault true;
+  news.display = "silent";
 }
