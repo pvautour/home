@@ -15,6 +15,7 @@ with lib;
       hu = "nix flake update --flake ~/.config/home-manager/";
       hc = "hx ~/.config/home-manager/";
       hm = "man home-configuration.nix";
+      nm = "man configuration.nix";
       nb = "sudo nixos-rebuild build";
       f = "fastfetch";
       cd = "z";

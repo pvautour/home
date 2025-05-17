@@ -16,6 +16,7 @@ with lib;
       pkgs.firefox
       pkgs.wofi
       pkgs.wev
+      pkgs.mesa-demos
     ];
 
     services.hyprpaper = {

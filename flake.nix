@@ -34,7 +34,6 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./modules/configurations/default.nix
           ./hosts/zephyrus-g15/home.nix
         ];
 
@@ -53,7 +52,6 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-          ./modules/configurations/default.nix
           ./hosts/work/work.nix
         ];
 
