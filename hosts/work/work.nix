@@ -6,7 +6,6 @@
 {
   imports = [ ../../modules/home-manager ];
   home.packages = [
-    pkgs.pywal
   ];
   home.shellAliases = {
     hs = "home-manager switch --flake ~/.config/home-manager/#work";

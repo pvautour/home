@@ -17,8 +17,7 @@
   imports = [
     ./cli-programs
     ./gui-programs
-    ./cli-programs/wsl-bash.nix
-    ./cli-programs/syncthing.nix
+    ./services
   ];
 
   cli-programs.enable = lib.mkDefault true;

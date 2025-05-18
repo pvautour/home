@@ -10,7 +10,12 @@ with lib;
 {
   options.cli-programs.enable = mkEnableOption "Enable cli-programs module";
 
+  imports = [
+    ./wsl-bash.nix
+  ];
+
   config = mkIf config.cli-programs.enable {
+
     home.shellAliases = {
       hu = "nix flake update --flake ~/.config/home-manager/";
       hc = "hx ~/.config/home-manager/";
@@ -29,14 +34,13 @@ with lib;
       pkgs.erdtree
       pkgs.fzf
       pkgs.manix
-      #    pkgs.nerdfonts
       pkgs.nixfmt-rfc-style
-      #    # Language servers for helix
+      # Language servers for helix
       pkgs.nodePackages.typescript-language-server
       pkgs.nodePackages.vscode-langservers-extracted
       pkgs.nodePackages.serve
       #    pkgs.openssh
-      #    pkgs.pywal
+      pkgs.pywal
       pkgs.ripgrep
       pkgs.zip
       pkgs.fastfetch
