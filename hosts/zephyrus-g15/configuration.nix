@@ -71,6 +71,17 @@
     withUWSM = true;
   };
 
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors = {
+      hyprland = {
+        prettyName = "Hyprland";
+        comment = "Hyprland compositor managed by UWSM";
+        binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+    };
+  };
+
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
@@ -111,6 +122,8 @@
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     pulseaudio
     pkgs.alsa-utils
+    #     pkgs.nvidia-utils
+    # pkgs.egl-wayland # only required by proprietary driver
   ];
 
   environment.variables = {

@@ -43,6 +43,7 @@ with lib;
       pkgs.pywal
       pkgs.ripgrep
       pkgs.zip
+      pkgs.unzip
       pkgs.fastfetch
     ];
 
