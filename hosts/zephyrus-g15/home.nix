@@ -4,7 +4,11 @@
 }:
 
 {
-  imports = [ ../../modules/home-manager ];
+  imports = [
+    ../../modules/home-manager
+    ../../modules/shared
+  ];
+  shared-stylix.enable = true;
   gui-programs.enable = true;
   syncthing.enable = true;
   home.packages = [
@@ -17,9 +21,4 @@
     ns = "sudo nixos-rebuild switch --flake ~/.config/home-manager/#zephyrus-g15";
   };
 
-  stylix = {
-    enable = true;
-    polarity = "dark";
-    image = ../../modules/home-manager/gui-programs/config/hypr/misty-forest.jpg;
-  };
 }

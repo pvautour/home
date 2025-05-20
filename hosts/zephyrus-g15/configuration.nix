@@ -13,6 +13,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../modules/shared
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -66,17 +67,7 @@
     "flakes"
   ];
 
-  stylix = {
-    enable = true;
-    polarity = "dark";
-    image = ../../modules/home-manager/gui-programs/config/hypr/misty-forest.jpg;
-  };
-
-  home-manager.sharedModules = [
-    {
-      stylix.enable = true;
-    }
-  ];
+  shared-stylix.enable = true;
 
   programs.hyprland = {
     enable = true;
