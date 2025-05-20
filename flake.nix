@@ -7,10 +7,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix.url = "github:nix-community/stylix";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
+    {
+      nixpkgs,
+      home-manager,
+      stylix,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
 
@@ -25,6 +31,7 @@
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [
+          stylix.nixosModules.stylix
           ./hosts/zephyrus-g15/configuration.nix
           home-manager.nixosModules.default
         ];
@@ -32,7 +39,10 @@
 
       homeConfigurations."home" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./hosts/zephyrus-g15/home.nix ];
+        modules = [
+          stylix.homeModules.stylix
+          ./hosts/zephyrus-g15/home.nix
+        ];
         extraSpecialArgs = {
           userSettings = {
             username = "pvautour";

@@ -40,7 +40,6 @@ with lib;
       pkgs.nodePackages.vscode-langservers-extracted
       pkgs.nodePackages.serve
       #    pkgs.openssh
-      pkgs.pywal
       pkgs.ripgrep
       pkgs.zip
       pkgs.unzip
@@ -60,7 +59,6 @@ with lib;
       enable = true;
       defaultEditor = true;
       settings = {
-        theme = "base16_transparent";
         editor.cursor-shape = {
           normal = "block";
           insert = "bar";
@@ -150,7 +148,6 @@ with lib;
 
     programs.bat = {
       enable = true;
-      config.theme = "base16";
     };
   };
 }

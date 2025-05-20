@@ -66,6 +66,18 @@
     "flakes"
   ];
 
+  stylix = {
+    enable = true;
+    polarity = "dark";
+    image = ../../modules/home-manager/gui-programs/config/hypr/misty-forest.jpg;
+  };
+
+  home-manager.sharedModules = [
+    {
+      stylix.enable = true;
+    }
+  ];
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;

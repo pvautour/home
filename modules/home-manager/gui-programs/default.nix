@@ -27,18 +27,19 @@ with lib;
 
     waybar.enable = true;
 
-    services.hyprpaper = {
-      enable = true;
-      settings = {
-        preload = [
-          "/home/pvautour/.config/home-manager/modules/home-manager/gui-programs/config/hypr/misty-forest.jpg"
-        ];
+    # services.hyprpaper = {
+    #   enable = true;
+    #   settings = {
+    #     preload = [
+    #       "/home/pvautour/.config/home-manager/modules/home-manager/gui-programs/config/hypr/misty-forest.jpg"
+    #     ];
 
-        wallpaper = [
-          ",/home/pvautour/.config/home-manager/modules/home-manager/gui-programs/config/hypr/misty-forest.jpg"
-        ];
-      };
-    };
+    #     wallpaper = [
+    #       ",/home/pvautour/.config/home-manager/modules/home-manager/gui-programs/config/hypr/misty-forest.jpg"
+    #     ];
+    #   };
+    # };
+    services.hyprpaper.enable = true;
 
     programs.kitty = {
       enable = true;
