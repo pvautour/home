@@ -26,10 +26,11 @@ with lib;
       cd = "z";
       cdi = "zi";
       cat = "bat";
+      d = "bash -c \"date '+%Y/%m/%d %H:%M:%S'\"";
+      weather = "curl wttr.in/Ottawa";
     };
 
     home.packages = [
-      #    pkgs.awscli2
       #    #    pkgs.carapace  # todo: see if valuable and configure
       pkgs.erdtree
       pkgs.fzf
@@ -45,6 +46,16 @@ with lib;
       pkgs.unzip
       pkgs.fastfetch
     ];
+
+    programs.awscli = {
+      enable = true;
+      settings = {
+        "default" = {
+          region = "ca-central-1";
+          output = "table";
+        };
+      };
+    };
 
     programs.gh = {
       enable = true;

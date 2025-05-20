@@ -16,5 +16,7 @@ with lib;
       bashrcExtra = builtins.readFile ./config/wsl.bashrc;
       profileExtra = builtins.readFile ./config/wsl.profile;
     };
+
+    home.shellAliases.paste = "powershell.exe -noprofile -command Get-Clipboard";
   };
 }
