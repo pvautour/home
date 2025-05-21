@@ -40,6 +40,8 @@
     };
   };
 
+  services.getty.autologinUser = "pvautour";
+
   # services.automatic-timezoned.enable = true; # did not work
 
   # networking.hostName = "nixos"; # Define your hostname.

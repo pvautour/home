@@ -18,5 +18,7 @@ with lib;
       image = ./backgrounds/misty-forest.jpg;
     };
 
+    stylix.enableReleaseChecks = false; # Disable warning about home manager version mismatch
+
   };
 }

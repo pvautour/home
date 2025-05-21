@@ -18,7 +18,6 @@ with lib;
 
     home.packages = [
       pkgs.firefox
-      pkgs.wofi
       pkgs.wev
       pkgs.mesa-demos
       pkgs.mako
@@ -40,6 +39,11 @@ with lib;
     #   };
     # };
     services.hyprpaper.enable = true;
+
+    programs.fuzzel = {
+      enable = true;
+      settings.main.icons-enabled = "no";
+    };
 
     programs.kitty = {
       enable = true;
