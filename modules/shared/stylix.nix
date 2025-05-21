@@ -15,7 +15,7 @@ with lib;
     stylix = {
       enable = true;
       polarity = "dark";
-      image = ./backgrounds/misty-forest.jpg;
+      image = ./backgrounds/ferns.jpg;
     };
 
     stylix.enableReleaseChecks = false; # Disable warning about home manager version mismatch
