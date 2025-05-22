@@ -39,6 +39,7 @@ with lib;
       # Language servers for helix
       pkgs.nodePackages.typescript-language-server
       pkgs.nodePackages.vscode-langservers-extracted
+      pkgs.nodePackages.yaml-language-server
       pkgs.nodePackages.serve
       #    pkgs.openssh
       pkgs.ripgrep
