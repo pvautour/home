@@ -42,7 +42,11 @@ with lib;
 
     programs.fuzzel = {
       enable = true;
-      settings.main.icons-enabled = "no";
+      settings = {
+        main.icons-enabled = "no";
+        border.radius = 0;
+      };
+
     };
 
     programs.kitty = {

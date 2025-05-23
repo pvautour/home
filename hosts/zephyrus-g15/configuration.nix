@@ -14,6 +14,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/shared
+    ../../modules/nix-os
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -119,6 +120,7 @@
     ];
   };
 
+  gaming.enable = true;
   # programs.firefox.enable = true;
 
   # List packages installed in system profile. To search, run:
