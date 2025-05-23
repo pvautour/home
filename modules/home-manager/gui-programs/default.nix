@@ -41,6 +41,8 @@ with lib;
       };
     };
 
+    programs.bash.profileExtra = builtins.readFile ./config/bash/profile.sh;
+
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = builtins.readFile ./config/hypr/hyprland.conf;
