@@ -1,4 +1,7 @@
 #!/bin/nu
+# Path to store the notification ID
+let notif_path = $"($env.XDG_RUNTIME_DIR)/custom_scripts/sound_sink.txt"
+
 # Get list of all sinks
 let sinks = (pactl list short sinks | lines | split column "\t" | get column2)
 
@@ -24,7 +27,21 @@ pactl list short sink-inputs | lines | each {|line|
     }
 }
 
-# Show new default sink
-notify-send --app-name="sound-sink" "Sound Sink" $"Switched to: ($next_sink)"
+# Read old notification ID if it exists
+let notif_id = (if ($notif_path | path exists ) {
+    open $notif_path | str trim
+} else {
+    "1234567890"
+})
+
+# Send or replace the notification
+let new_id = (notify-send --app-name="sound-sink" --replace-id $notif_id "Sound Sink" $"Switched to: ($next_sink)" --print-id | str trim)
+echo $new_id;
+
+# Save new notification ID
+mkdir ($notif_path | path dirname) 
+echo $new_id | save -f $notif_path
+
+# Also echo to terminal
 echo $"Switched to: ($next_sink)"
 
