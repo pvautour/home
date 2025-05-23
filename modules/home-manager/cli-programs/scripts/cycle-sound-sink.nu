@@ -25,5 +25,6 @@ pactl list short sink-inputs | lines | each {|line|
 }
 
 # Show new default sink
+notify-send --app-name="sound-sink" "Sound Sink" $"Switched to: ($next_sink)"
 echo $"Switched to: ($next_sink)"
 

@@ -129,6 +129,7 @@
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     pulseaudio
     pkgs.alsa-utils
+    pkgs.libnotify
     #     pkgs.nvidia-utils
     # pkgs.egl-wayland # only required by proprietary driver
   ];

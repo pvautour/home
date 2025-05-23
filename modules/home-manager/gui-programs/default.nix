@@ -10,21 +10,16 @@ with lib;
 {
   options.gui-programs.enable = mkEnableOption "Enable gui-programs module";
 
-  imports = [
-    ./waybar.nix
-  ];
-
   config = mkIf config.gui-programs.enable {
 
     home.packages = [
       pkgs.firefox
       pkgs.wev
       pkgs.mesa-demos
-      pkgs.mako
       pkgs.hyprpolkitagent
     ];
 
-    waybar.enable = true;
+    services.mako.enable = true;
 
     # services.hyprpaper = {
     #   enable = true;
