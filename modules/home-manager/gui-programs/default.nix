@@ -19,20 +19,10 @@ with lib;
       pkgs.hyprpolkitagent
     ];
 
-    services.mako.enable = true;
-
-    # services.hyprpaper = {
-    #   enable = true;
-    #   settings = {
-    #     preload = [
-    #       "/home/pvautour/.config/home-manager/modules/home-manager/gui-programs/config/hypr/misty-forest.jpg"
-    #     ];
-
-    #     wallpaper = [
-    #       ",/home/pvautour/.config/home-manager/modules/home-manager/gui-programs/config/hypr/misty-forest.jpg"
-    #     ];
-    #   };
-    # };
+    services.mako = {
+      enable = true;
+      defaultTimeout = 3000;
+    };
     services.hyprpaper.enable = true;
 
     programs.fuzzel = {
