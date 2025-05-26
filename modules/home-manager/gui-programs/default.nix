@@ -17,6 +17,8 @@ with lib;
       pkgs.wev
       pkgs.mesa-demos
       pkgs.hyprpolkitagent
+      pkgs.zathura
+      pkgs.feh
     ];
 
     services.mako = {

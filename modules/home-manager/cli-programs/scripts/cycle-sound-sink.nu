@@ -36,7 +36,6 @@ let notif_id = (if ($notif_path | path exists ) {
 
 # Send or replace the notification
 let new_id = (notify-send --app-name="sound-sink" --replace-id $notif_id "Sound Sink" $"Switched to: ($next_sink)" --print-id | str trim)
-echo $new_id;
 
 # Save new notification ID
 mkdir ($notif_path | path dirname) 

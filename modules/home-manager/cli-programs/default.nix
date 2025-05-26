@@ -28,6 +28,7 @@ with lib;
       cat = "bat";
       d = "bash -c \"date '+%Y/%m/%d %H:%M:%S'\"";
       weather = "curl wttr.in/Ottawa";
+      za = "zathura";
     };
 
     home.packages = [

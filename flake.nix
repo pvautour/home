@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     stylix.url = "github:nix-community/stylix";
   };
 
@@ -15,6 +16,7 @@
       nixpkgs,
       home-manager,
       stylix,
+      nixos-hardware,
       ...
     }@inputs:
     let
@@ -31,6 +33,7 @@
         inherit system;
         specialArgs = { inherit inputs; };
         modules = [
+          nixos-hardware.nixosModules.asus-zephyrus-ga503
           stylix.nixosModules.stylix
           ./hosts/zephyrus-g15/configuration.nix
           home-manager.nixosModules.default

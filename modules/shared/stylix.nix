@@ -15,7 +15,7 @@ with lib;
     stylix = {
       enable = true;
       polarity = "dark";
-      image = ./backgrounds/ferns.jpg;
+      image = ./wallpapers/ferns-2.jpg;
     };
 
     stylix.enableReleaseChecks = false; # Disable warning about home manager version mismatch
