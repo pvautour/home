@@ -47,6 +47,7 @@ with lib;
       pkgs.zip
       pkgs.unzip
       pkgs.fastfetch
+      pkgs.pulsemixer # todo: Capability / sound
     ];
 
     programs.awscli = {
