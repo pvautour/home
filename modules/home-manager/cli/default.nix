@@ -11,7 +11,7 @@ with lib;
   options.cli.enable = mkEnableOption "Enable cli module";
 
   imports = [
-    ./wsl-bash.nix
+    ./bash.nix
   ];
 
   config = mkIf config.cli.enable {
@@ -70,8 +70,6 @@ with lib;
         protocol = "ssh";
       };
     };
-
-    programs.bash.enable = true;
 
     programs.helix = {
       enable = true;
@@ -167,5 +165,8 @@ with lib;
     programs.bat = {
       enable = true;
     };
+
+    programs.bash.enable = true;
+
   };
 }

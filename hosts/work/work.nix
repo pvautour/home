@@ -16,5 +16,5 @@
     w = "wal --theme base16-greenscreen";
     set-aws = "sh ~/.config/home-manager/scripts/wsl-set-aws.sh";
   };
-  wsl-bash.enable = true;
+  wsl.enable = true;
 }

@@ -8,11 +8,10 @@
 with lib;
 
 {
-  options.wsl-bash.enable = mkEnableOption "Enable wsl-bash module";
+  options.wsl.enable = mkEnableOption "Enable wsl bash module";
 
-  config = mkIf config.wsl-bash.enable {
+  config = mkIf config.wsl.enable {
     programs.bash = {
-      enable = true;
       bashrcExtra = builtins.readFile ./config/wsl.bashrc;
       profileExtra = builtins.readFile ./config/wsl.profile;
     };
