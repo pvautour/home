@@ -8,13 +8,13 @@
 with lib;
 
 {
-  options.cli-programs.enable = mkEnableOption "Enable cli-programs module";
+  options.cli.enable = mkEnableOption "Enable cli module";
 
   imports = [
     ./wsl-bash.nix
   ];
 
-  config = mkIf config.cli-programs.enable {
+  config = mkIf config.cli.enable {
 
     home.shellAliases = {
       hu = "nix flake update --flake ~/.config/home-manager/";
@@ -48,6 +48,8 @@ with lib;
       pkgs.unzip
       pkgs.fastfetch
       pkgs.pulsemixer # todo: Capability / sound
+      pkgs.sd
+      pkgs.fd
     ];
 
     programs.awscli = {

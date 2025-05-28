@@ -15,10 +15,10 @@
 
   # Custom Configurations
   imports = [
-    ./cli-programs
-    ./gui-programs
+    ./cli
+    ./gui
     ./services
   ];
 
-  cli-programs.enable = lib.mkDefault true;
+  cli.enable = lib.mkDefault true;
 }

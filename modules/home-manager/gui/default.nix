@@ -8,9 +8,9 @@
 with lib;
 
 {
-  options.gui-programs.enable = mkEnableOption "Enable gui-programs module";
+  options.gui.enable = mkEnableOption "Enable gui module";
 
-  config = mkIf config.gui-programs.enable {
+  config = mkIf config.gui.enable {
 
     home.packages = [
       pkgs.firefox

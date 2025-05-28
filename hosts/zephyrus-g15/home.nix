@@ -9,7 +9,7 @@
     ../../modules/shared
   ];
   shared-stylix.enable = true;
-  gui-programs.enable = true;
+  gui.enable = true;
   syncthing.enable = true;
   home.packages = [
   ];
