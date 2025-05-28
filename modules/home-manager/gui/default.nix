@@ -43,7 +43,7 @@ with lib;
       };
     };
 
-    programs.bash.profileExtra = builtins.readFile ./config/bash/profile.sh;
+    programs.bash.profileExtra = builtins.readFile ./config/bash/.profile;
 
     wayland.windowManager.hyprland = {
       enable = true;
