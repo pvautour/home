@@ -14,7 +14,7 @@
     sc = "hx /mnt/c/Users/pvautour/Documents/Work/todo/scratchpad.md";
     mn = "hx /mnt/c/Users/pvautour/Documents/Work/todo/meeting-notes.md";
     w = "wal --theme base16-greenscreen";
-    set-aws = "sh ~/.config/home-manager/modules/home-manager/cli/scripts/wsl-set-aws.sh";
+    set-aws = "sh ~/.config/home-manager/scripts/wsl-set-aws.sh";
   };
   wsl-bash.enable = true;
 }

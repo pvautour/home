@@ -1,4 +1,5 @@
 #!/bin/nu
+# WARNING: Ai Slop. This needs to be validated. Espacially the use of pactl. I believe it does not properly filter to valid outputs. 
 # Path to store the notification ID
 let notif_path = $"($env.XDG_RUNTIME_DIR)/custom_scripts/sound_sink.txt"
 

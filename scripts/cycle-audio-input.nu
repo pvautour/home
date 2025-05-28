@@ -1,5 +1,5 @@
 #!/bin/nu
-# TODO: This script does not work. It need to be changed.
+# WARNING: AI Slop. This script does not work. It need to be changed.
 # Path to store the notification ID
 let notif_path = $"($env.XDG_RUNTIME_DIR)/custom_scripts/sound_source.txt"
 
