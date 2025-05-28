@@ -29,6 +29,8 @@ with lib;
       d = "bash -c \"date '+%Y/%m/%d %H:%M:%S'\"";
       weather = "curl wttr.in/Ottawa";
       za = "zathura";
+      erdd = "erd --dirs-only";
+      erd2 = "erd -L 2";
     };
 
     home.packages = [
