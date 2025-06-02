@@ -28,10 +28,10 @@ with lib;
         base08 = "#FFBF00"; # error (amber)  # Error - Amber
         base09 = "#007700"; # accent (orange)
         base0A = "#E1A200"; # warning (burnt yellow)  # Warning - Burnt Yellow
-        base0B = "#007700"; # success (brighter green)
-        base0C = "#009900"; # cyan (for regex, diff additions, etc.)
-        base0D = "#00bb00"; # functions, keywords (blue-ish for contrast)
-        base0E = "#005500"; # classes/types (purple)
+        base0B = "#007700"; # success
+        base0C = "#009900"; # for regex, diff additions, etc.
+        base0D = "#00bb00"; # functions, keywords
+        base0E = "#005500"; # classes/types
         base0F = "#00ff00"; # deprecated, custom
         name = "CustomGreenAmberContrast";
       };
