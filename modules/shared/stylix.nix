@@ -27,7 +27,7 @@ with lib;
         base07 = "#00bb00"; # light background (unused mostly)
         base08 = "#FFBF00"; # error (amber)  # Error - Amber
         base09 = "#007700"; # accent (orange)
-        base0A = "#E1A200"; # warning (burnt yellow)  # Warning - Burnt Yellow
+        base0A = "#FFB642"; # warning (burnt yellow)  # Warning - Burnt Yellow
         base0B = "#007700"; # success
         base0C = "#009900"; # for regex, diff additions, etc.
         base0D = "#00bb00"; # functions, keywords
