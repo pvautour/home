@@ -16,6 +16,13 @@ with lib;
       enable = true;
       polarity = "dark";
       image = ../../wallpapers/ferns-2.jpg;
+
+      cursor = {
+        package = pkgs.adwaita-icon-theme;
+        name = "Adwaita";
+        size = 24;
+      };
+
       base16Scheme = {
         name = "Green Screen";
         author = "Chris Kempson (http://chriskempson.com)";
