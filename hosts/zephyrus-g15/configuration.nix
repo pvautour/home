@@ -43,9 +43,8 @@
 
   hardware.bluetooth = {
     enable = true; # enables support for Bluetooth
-    powerOnBoot = true; # powers up the default Bluetooth controller on boot
+    powerOnBoot = false; # powers up the default Bluetooth controller on boot
     package = pkgs.bluez;
-    settings.Policy.AutoEnable = "true";
   };
   services.blueman.enable = true;
 
