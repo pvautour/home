@@ -52,6 +52,7 @@ with lib;
       pkgs.pulsemixer # todo: Capability / sound
       pkgs.sd
       pkgs.fd
+      pkgs.brightnessctl
     ];
 
     programs.awscli = {
