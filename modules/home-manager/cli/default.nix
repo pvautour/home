@@ -54,6 +54,7 @@ with lib;
       pkgs.fd
       pkgs.brightnessctl
       pkgs.bluetui
+      pkgs.spotify-player
     ];
 
     programs.awscli = {
