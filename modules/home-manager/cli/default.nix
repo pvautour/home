@@ -53,6 +53,7 @@ with lib;
       pkgs.sd
       pkgs.fd
       pkgs.brightnessctl
+      pkgs.bluetui
     ];
 
     programs.awscli = {

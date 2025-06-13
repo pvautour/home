@@ -41,6 +41,14 @@
     };
   };
 
+  hardware.bluetooth = {
+    enable = true; # enables support for Bluetooth
+    powerOnBoot = true; # powers up the default Bluetooth controller on boot
+    package = pkgs.bluez;
+    settings.Policy.AutoEnable = "true";
+  };
+  services.blueman.enable = true;
+
   services.getty.autologinUser = "pvautour";
 
   # services.automatic-timezoned.enable = true; # did not work
