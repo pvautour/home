@@ -17,7 +17,7 @@ with lib;
   config = mkIf config.cli.enable {
 
     home.shellAliases = {
-      hu = "nix flake update --flake ~/.config/home-manager/";
+      fu = "nix flake update --flake ~/.config/home-manager/";
       hc = "hx ~/.config/home-manager/";
       hm = "man home-configuration.nix";
       nm = "man configuration.nix";
@@ -43,6 +43,7 @@ with lib;
       pkgs.nodePackages.typescript-language-server
       pkgs.nodePackages.vscode-langservers-extracted
       pkgs.nodePackages.yaml-language-server
+      pkgs.nodePackages.svelte-language-server
       pkgs.nodePackages.serve
       #    pkgs.openssh
       pkgs.ripgrep

@@ -16,5 +16,6 @@
     w = "wal --theme base16-greenscreen";
     set-aws = "sh ~/.config/home-manager/scripts/wsl-set-aws.sh";
   };
+  programs.pywal.enable = true;
   wsl.enable = true;
 }
