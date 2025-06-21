@@ -134,6 +134,7 @@ with lib;
       difftastic.enable = true;
       extraConfig = {
         push.autoSetupRemote = "true";
+        pull.ff = "only";
       };
     };
 
