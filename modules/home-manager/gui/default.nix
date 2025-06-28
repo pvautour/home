@@ -24,6 +24,7 @@ with lib;
     services.mako = {
       enable = true;
       defaultTimeout = 3000;
+      settings.border-radius = 3;
     };
     services.hyprpaper.enable = true;
 
@@ -31,7 +32,7 @@ with lib;
       enable = true;
       settings = {
         main.icons-enabled = "no";
-        border.radius = 0;
+        border.radius = 3;
       };
 
     };

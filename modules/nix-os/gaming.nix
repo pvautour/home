@@ -18,5 +18,9 @@ with lib;
         proton-ge-bin
       ];
     };
+
+    environment.systemPackages = with pkgs; [
+      discord
+    ];
   };
 }
