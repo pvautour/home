@@ -19,6 +19,8 @@ with lib;
       pkgs.hyprpolkitagent
       pkgs.zathura
       pkgs.feh
+      pkgs.chromium
+      pkgs.hyprshot
     ];
 
     services.mako = {
