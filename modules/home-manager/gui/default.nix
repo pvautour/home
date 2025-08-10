@@ -21,6 +21,8 @@ with lib;
       pkgs.feh
       pkgs.chromium
       pkgs.hyprshot
+      pkgs.nautilus
+      pkgs.gimp
     ];
 
     services.mako = {

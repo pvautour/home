@@ -56,6 +56,9 @@ with lib;
       pkgs.brightnessctl
       pkgs.bluetui
       pkgs.spotify-player
+      pkgs.bashmount
+      pkgs.rtorrent
+      pkgs.p7zip
     ];
 
     programs.awscli = {

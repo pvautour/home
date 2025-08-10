@@ -1,7 +1,6 @@
 #!/usr/bin/env nu
-let output = (brightnessctl g | str trim)
+let output = (brightnessctl -m | split row "," | get 3)
 
-let formatted = [$output, " %"] | str join
-print $formatted
+print $output
 
-~/.config/home-manager/scripts/notify.nu Brightness $formatted
+~/.config/home-manager/scripts/notify.nu Brightness $output
