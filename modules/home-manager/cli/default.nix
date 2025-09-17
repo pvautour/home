@@ -59,6 +59,7 @@ with lib;
       pkgs.bashmount
       pkgs.rtorrent
       pkgs.p7zip
+      pkgs.qpdf
     ];
 
     programs.awscli = {
