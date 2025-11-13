@@ -43,10 +43,27 @@
 
   hardware.bluetooth = {
     enable = true; # enables support for Bluetooth
-    powerOnBoot = false; # powers up the default Bluetooth controller on boot
+    powerOnBoot = true; # powers up the default Bluetooth controller on boot
+    settings.General = {
+      experimental = true;
+      Privacy = "device";
+      JustWorksRepairing = "always";
+      Class = "0x000100";
+      FastConnectable = true;
+    };
     package = pkgs.bluez;
   };
   services.blueman.enable = true;
+
+  hardware.xpadneo.enable = true; # Enable the xpadneo driver for Xbox One wireless controllers
+
+  boot = {
+    extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
+    extraModprobeConfig = ''
+      options bluetooth disable_ertm=Y
+    '';
+    # connect xbox controller
+  };
 
   services.getty.autologinUser = "pvautour";
 
