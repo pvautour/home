@@ -27,8 +27,10 @@ with lib;
 
     services.mako = {
       enable = true;
-      defaultTimeout = 3000;
-      settings.border-radius = 3;
+      settings = {
+        defaultTimeout = 3000;
+        border-radius = 3;
+      };
     };
     services.hyprpaper.enable = true;
 

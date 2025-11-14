@@ -133,13 +133,18 @@ with lib;
 
     programs.git = {
       enable = true;
-      userName = "Pascal Vautour";
-      userEmail = "vautour.pascal@gmail.com";
-      difftastic.enable = true;
-      extraConfig = {
+
+      settings = {
+        user.name = "Pascal Vautour";
+        user.email = "vautour.pascal@gmail.com";
         push.autoSetupRemote = "true";
         pull.ff = "only";
       };
+    };
+
+    programs.difftastic = {
+      enable = true;
+      git.enable = true;
     };
 
     programs.zoxide = {
