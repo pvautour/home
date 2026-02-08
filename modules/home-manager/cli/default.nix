@@ -38,7 +38,7 @@ with lib;
       pkgs.erdtree
       pkgs.fzf
       pkgs.manix
-      pkgs.nixfmt-rfc-style
+      pkgs.nixfmt
       # Language servers for helix
       pkgs.nodePackages.typescript-language-server
       pkgs.nodePackages.vscode-langservers-extracted
@@ -60,6 +60,8 @@ with lib;
       pkgs.rtorrent
       pkgs.p7zip
       pkgs.qpdf
+      pkgs.imagemagick
+      pkgs.ghostscript
     ];
 
     programs.awscli = {
@@ -109,7 +111,7 @@ with lib;
         {
           name = "nix";
           auto-format = true;
-          formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
+          formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
         }
         {
           name = "html";

@@ -15,8 +15,9 @@ with lib;
     stylix = {
       enable = true;
       polarity = "dark";
-      image = ../../wallpapers/bay.jpg;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
+      #       targets.firefox.profileNames = [ "default" ];
+      image = ../../wallpapers/ferns-2.jpg;
+      base16Scheme = "${pkgs.base16-schemes}/share/themes/greenscreen.yaml";
 
       cursor = {
         package = pkgs.rose-pine-hyprcursor;
