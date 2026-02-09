@@ -23,6 +23,7 @@ with lib;
       pkgs.hyprshot
       pkgs.nautilus
       pkgs.gimp
+      pkgs.hyprpaper
     ];
 
     services.mako = {
