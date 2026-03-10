@@ -40,27 +40,15 @@
         ];
       };
 
-      homeConfigurations."home" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."pvautour_work@CPC-Pasca-YGTW5" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          stylix.homeModules.stylix
-          ./hosts/zephyrus-g15/home.nix
+          ./hosts/work/work.nix
         ];
         extraSpecialArgs = {
           userSettings = {
-            username = "pvautour";
-            homeDirectory = "/home/pvautour";
-          };
-        };
-      };
-
-      homeConfigurations."work" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./hosts/work/work.nix ];
-        extraSpecialArgs = {
-          userSettings = {
-            username = "pv";
-            homeDirectory = "/home/pv";
+            username = "pvautour_work";
+            homeDirectory = "/home/pvautour_work";
           };
         };
       };

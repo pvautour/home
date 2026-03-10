@@ -26,6 +26,4 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [ -e /home/pv/.nix-profile/etc/profile.d/nix.sh ]; then . /home/pv/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-nu
+if [ -e /home/pvautour_work/.nix-profile/etc/profile.d/nix.sh ]; then . /home/pvautour_work/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
