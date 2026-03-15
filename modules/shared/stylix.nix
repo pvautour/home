@@ -15,7 +15,6 @@ with lib;
     stylix = {
       enable = true;
       polarity = "dark";
-      #       targets.firefox.profileNames = [ "default" ];
       image = ../../wallpapers/ferns-2.jpg;
       base16Scheme = "${pkgs.base16-schemes}/share/themes/greenscreen.yaml";
 

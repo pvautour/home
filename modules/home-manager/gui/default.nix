@@ -13,7 +13,6 @@ with lib;
   config = mkIf config.gui.enable {
 
     home.packages = [
-      pkgs.firefox
       pkgs.wev
       pkgs.mesa-demos
       pkgs.hyprpolkitagent
@@ -26,6 +25,8 @@ with lib;
       pkgs.hyprpaper
     ];
 
+    programs.firefox.enable = true;
+
     services.mako = {
       enable = true;
       settings = {
@@ -34,6 +35,17 @@ with lib;
       };
     };
     services.hyprpaper.enable = true;
+
+    programs.vscode = {
+      enable = true;
+      package = pkgs.vscodium.fhs;
+      profiles.default = {
+        extensions = with pkgs.vscode-extensions; [
+          github.copilot
+          github.copilot-chat
+        ];
+      };
+    };
 
     programs.fuzzel = {
       enable = true;

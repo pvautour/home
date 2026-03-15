@@ -32,7 +32,8 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.open = true;
   # asus ctl configuration
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_18; # Temporary fix for nvidia driver not building. TO DO: Switch to latest.
   services.supergfxd.enable = true;
   services = {
     asusd = {
@@ -65,7 +66,7 @@
     # connect xbox controller
   };
 
-  services.getty.autologinUser = "pvautour";
+  # services.getty.autologinUser = "pvautour";
 
   # services.automatic-timezoned.enable = true; # did not work
 
@@ -96,18 +97,15 @@
 
   shared-stylix.enable = true;
 
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-  };
+  programs.niri.enable = true;
 
   programs.uwsm = {
     enable = true;
     waylandCompositors = {
-      hyprland = {
-        prettyName = "Hyprland";
-        comment = "Hyprland compositor managed by UWSM";
-        binPath = "/run/current-system/sw/bin/start-hyprland";
+      Niri = {
+        prettyName = "Niri";
+        comment = "Niri compositor managed by UWSM";
+        binPath = "/run/current-system/sw/bin/niri-session";
       };
     };
   };
@@ -154,6 +152,7 @@
     pulseaudio
     pkgs.alsa-utils
     pkgs.libnotify
+    xwayland-satellite
     #     pkgs.nvidia-utils
     # pkgs.egl-wayland # only required by proprietary driver
   ];
